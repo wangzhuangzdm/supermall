@@ -39,14 +39,15 @@ export default {
   height: 40px;
   line-height: 40px;
   background-color: #fff;
-  margin: 10px 0 10px 0;
+/* 
+  margin: 10px 0 10px 0; */
 }
 .tab-control-item {
   flex: 1;
   
 }
 .tab-control-item span{
-  padding: 5px;
+  padding: 3px;
 }
 .active {
   color: var(--color-high-text);

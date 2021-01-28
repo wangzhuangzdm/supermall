@@ -11,7 +11,7 @@ name:'FeatureView'
 }
 </script>
 
-<style>
+<style scoped>
 .feature {
   width: 100%;
 }
