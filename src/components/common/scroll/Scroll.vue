@@ -56,6 +56,11 @@ export default {
       this.scroll && this.scroll.refresh();
       //  console.log(this);
     },
+    //获取Y值
+      getPositionY(){
+        console.log(this.scroll)
+        return this.scroll ? this.scroll.y : 0
+      }
   },
 };
 </script>

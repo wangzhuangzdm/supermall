@@ -9,6 +9,12 @@ export function getDetail(iid){
   })
 };
 
+export function getRecommend() {
+  return request({
+    url: '/recommend'
+  })
+}
+
 // 获取基础信息
 export class GetDeatilBaseData{
   constructor(itemInfo,columns,shopInfo){

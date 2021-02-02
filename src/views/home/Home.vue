@@ -35,7 +35,9 @@
         
       ></tab-control>
       <!-- 数据展示 -->
-      <goods-list :goods="showGoods"></goods-list>
+      <goods-list>
+       <goods-list-item v-for="(item,index) in goods[currentType].list" :key="index" :goodsItem="item"></goods-list-item>
+     </goods-list>
     </scroll>
     <back-top @click.native="backClick" v-show="isShow"></back-top>
   </div>
@@ -48,6 +50,7 @@ import HomeRecommendView from "./childComps/HomeRecommendView";
 import FeatureView from "./childComps/FeatureView";
 import TabControl from "components/content/tabControl/TabControl.vue";
 import GoodsList from "components/content/goods/GoodsList.vue";
+import GoodsListItem from 'components/content/goods/GoodsLIstItem.vue';
 import BackTop from "components/content/backTop/BackTop.vue";
 
 import { getHomeMultidata, getHomeGoods } from "network/home";
@@ -64,6 +67,7 @@ export default {
     GoodsList,
     Scroll,
     BackTop,
+    GoodsListItem
   },
   data() {
     return {
@@ -101,17 +105,17 @@ export default {
     showGoods() {
       return this.goods[this.currentType].list;
     },
-    // activated() {
-    //   // 回到路由时滚到之前记录的位置
-    //   this.$refs.scroll.scrollTo(0,this.saveY,0);
-    //   this.$refs.scroll.refresh();
-    // },
-    // //离开路由前记录滚到的位置
-    // deactivated() {
-    //   this.saveY = this.$refs.scroll.scroll.y;
+    activated() {
+      // 回到路由时滚到之前记录的位置
+      this.$refs.scroll.scrollTo(0,this.saveY,0);
+      this.$refs.scroll.refresh();
+    },
+    //离开路由前记录滚到的位置
+    deactivated() {
+      this.saveY = this.$refs.scroll.getPositionY();
       
       
-    // }
+    }
   },
   methods: {
    
