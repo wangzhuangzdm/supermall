@@ -1,3 +1,5 @@
+### 此项目仿的是蘑菇街，主要技术vue
+
 # supermall
 
 ## Project setup
