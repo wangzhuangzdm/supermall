@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .tab-control {
   display: flex;
   text-align: center;
@@ -39,6 +39,7 @@ export default {
   height: 40px;
   line-height: 40px;
   background-color: #fff;
+ 
 /* 
   margin: 10px 0 10px 0; */
 }
